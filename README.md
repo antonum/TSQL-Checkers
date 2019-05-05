@@ -14,7 +14,7 @@ In IRIS terminal `USER>`
 ```
 !wget -O /tmp/checkers.tar.gz https://github.com/antonum/TSQL-Checkers/archive/master.tar.gz && tar -xvf /tmp/checkers.tar.gz -C /tmp
 do $system.OBJ.LoadDir("/tmp/TSQL-Checkers-master","c",,1)
-do $system.OBJ.Load("/tmp/TSQL-Checkers-master/checkers.mac")
+do $system.OBJ.Load("/tmp/TSQL-Checkers-master/checkers.mac","c")
 do ^checkers
 
 ```
