@@ -12,8 +12,9 @@ Tested on InterSystems Cache' and InterSystems IRIS.
 In IRIS terminal `USER>`
 
 ```
-!wget -O /tmp/checkets.tar.gz https://github.com/antonum/TSQL-Checkers/archive/master.zip && tar -xvf /tmp/checkets.tar.gz -C /tmp
-do $system.OBJ.LoadDir("/tmp/checkers","c",,1)
-do $system.OBJ.Load("/tmp/checkers/checkers.mac","c",,1) 
+!wget -O /tmp/checkers.tar.gz https://github.com/antonum/TSQL-Checkers/archive/master.tar.gz && tar -xvf /tmp/checkers.tar.gz -C /tmp
+do $system.OBJ.LoadDir("/tmp/TSQL-Checkers-master","c",,1)
+do $system.OBJ.Load("/tmp/TSQL-Checkers-master/checkers.mac")
 do ^checkers
+
 ```
