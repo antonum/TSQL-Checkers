@@ -1,0 +1,2 @@
+ROUTINE tshell
+ DO ##class(%TSQL.Manager).interactive(,,,"/nodisplaylog")

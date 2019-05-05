@@ -1,0 +1,15 @@
+ROUTINE checkers
+ do ##class(checkers).checkers()
+ while 1 {
+ 	write ":"
+ 	read move
+ 	set move=$translate($zcvt(move,"U"),"- ","")
+ 	write !
+ 	if move="XIT" quit
+ 	if move="CHECKERSHELP" {
+	 	do ##class(checkers).checkers("help")
+ 	} else {
+	 	xecute "do ##class("_move_")."_move_"()"
+	 	
+ 	}
+ }

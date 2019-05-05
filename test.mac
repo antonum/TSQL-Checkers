@@ -1,0 +1,41 @@
+ROUTINE test
+start
+ k %objlasterror
+ do drawboard("validCell")
+ do drawboard("isCellEmpty")
+ do drawboard("whosIn")
+ do drawboard("canJump",1)
+ do drawboard("nextRight",2)
+ do drawboard("nextLeft",2)
+ do drawboard("canMoveLeft",2)
+ do drawboard("canMoveRight",2)
+
+ 
+ quit
+drawboard(functionname, who="")
+ write "Drawing board for "_functionname,!
+ for row=1:1:8 {
+	 for colchar=65:1:72 {
+		set cell=$c(colchar)_row
+		if functionname="" {
+			write cell_" "
+		} 
+		else {
+			if who="" {
+				xecute "w ##class("_functionname_")."_functionname_"("""_cell_""")"
+			} else {
+				xecute "w ##class("_functionname_")."_functionname_"("_who_","""_cell_""")"
+			}
+			w " "
+			if $d(%objlasterror)&0 {
+				w !,!
+				do $system.OBJ.DisplayError()
+				w !,"cell: ", cell,!
+				kill %objlasterror
+			}
+		}
+		
+	 }
+	 write !
+ }
+ quit
