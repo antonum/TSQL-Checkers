@@ -1,4 +1,4 @@
-# TSQL Checker
+# TSQL Checkers
 
 The game is a port of TSQL Checkers written by Steve Wint for SQL Server 2000. You can get the original script here http://www.stevewint.com 
 Tested on InterSystems Cache' and InterSystems IRIS.
