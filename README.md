@@ -9,7 +9,7 @@ Tested on InterSystems Cache' and InterSystems IRIS.
 
 ## Quick installation for existing IRIS instance
 
-Instructions below assume that you already have InterSystems IRIS installed. If not - the easiest way to try it would be to pull the [InterSystems IRIS Docker Image](https://hub.docker.com/_/intersystems-iris-data-platform) and follow the setup instructions.
+Instructions below assume that you already have InterSystems IRIS installed. If not - the easiest way to try it would be to pull the [InterSystems IRIS Community Edition Docker Image](https://hub.docker.com/_/intersystems-iris-data-platform) and follow the setup instructions.
 
 In IRIS terminal `USER>`
 
@@ -21,7 +21,7 @@ do ^checkers
 
 ```
 
-## Quick installation with Docker Compose
+## Quick installation with Docker Compose and InterSystems IRIS Community Edition
 
 
 ```
