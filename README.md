@@ -32,3 +32,7 @@ $ docker exec -it checkers_iris_1 iris session iris
 USER>do ^checkers
 
 ```
+
+## See also
+
+For more information on InterSystems IRIS support for Transact-SQL (TSQL), SQL Server and Sybase to IRIS Migration tools see [Transact-SQL (TSQL) Migration Guide](https://irisdocs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GTSQ)
