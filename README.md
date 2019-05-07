@@ -7,7 +7,7 @@ Tested on InterSystems Cache' and InterSystems IRIS.
 ![alt text](https://s3.amazonaws.com/anton-iot-demo/Checkers1.gif "TSQL Checkers")
 
 
-## Quick installation
+## Quick installation for existing IRIS instance
 
 Instructions below assume that you already have InterSystems IRIS installed. If not - the easiest way to try it would be to pull the [InterSystems IRIS Docker Image](https://hub.docker.com/_/intersystems-iris-data-platform) and follow the setup instructions.
 
@@ -18,5 +18,17 @@ In IRIS terminal `USER>`
 do $system.OBJ.LoadDir("/tmp/TSQL-Checkers-master","c",,1)
 do $system.OBJ.Load("/tmp/TSQL-Checkers-master/checkers.mac","c")
 do ^checkers
+
+```
+
+## Quick installation with Docker Compose
+
+
+```
+$ git clone https://github.com/antonum/TSQL-Checkers.git
+$ docker-compose build
+$ docker-compose up -d
+$ docker exec -it checkers_iris_1 iris session iris
+USER>do ^checkers
 
 ```
