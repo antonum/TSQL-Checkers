@@ -16,3 +16,4 @@ RUN TEMPID=$(echo "i"$RANDOM) \
   | iris session $ISC_PACKAGE_INSTANCENAME \
  && /bin/echo -e "$TEMPID\n$TEMPID\n" \
   | iris stop $ISC_PACKAGE_INSTANCENAME quietly
+  
