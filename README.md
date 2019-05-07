@@ -9,6 +9,8 @@ Tested on InterSystems Cache' and InterSystems IRIS.
 
 ## Quick installation
 
+Instructions below assume that you already have InterSystems IRIS installed. If not - the easiest way to try it would be to pull the [InterSystems IRIS Docker Image](https://hub.docker.com/_/intersystems-iris-data-platform) and follow the setup instructions.
+
 In IRIS terminal `USER>`
 
 ```
