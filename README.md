@@ -35,12 +35,13 @@ USER>do ^checkers
 
 For more information on InterSystems IRIS support for Transact-SQL (TSQL), SQL Server and Sybase to IRIS Migration tools see [Transact-SQL (TSQL) Migration Guide](https://irisdocs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GTSQ)
 
-## Hints if the original docu is unavailable 
+### Hints if the original docu is unavailable 
 
-Rules are standard rules of Checker   
-Moves are done by entering start and target coordinates e.g. **F2E1** or **f2e1** also **f2-e1**  
-An invalid move results in **<METHOD DOES NOT EXIST>+11^checker**   
-Don't worry enter **GOTO** or simply **G** to continue with a valid move.   
-If your opponent reaches the bottom line and gets a KING it is totally paralized and can't move it anymore (Seems to be a bug)    
-So you are always a winner.
+- Rules are standard rules of Checker   
+- Moves are done by entering start and target coordinates e.g. **F2E1** or **f2e1** also **f2-e1**  
+- An invalid move results in **<METHOD DOES NOT EXIST>+11^checker**   
+- Don't worry enter **GOTO** or simply **G** to continue with a valid move.   
+- If your opponent reaches the bottom line and gets a *KING* it is totally paralized and can't move it anymore (Seems to be a bug)    
+- So it'S hard not to be a winner.
+#### Remember the focus is on TSQL support
 
