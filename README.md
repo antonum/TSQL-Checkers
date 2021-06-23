@@ -15,8 +15,7 @@ In IRIS terminal `USER>`
 
 ```
 !wget -O /tmp/checkers.tar.gz https://github.com/antonum/TSQL-Checkers/archive/master.tar.gz && tar -xvf /tmp/checkers.tar.gz -C /tmp
-do $system.OBJ.LoadDir("/tmp/TSQL-Checkers-master","c",,1)
-do $system.OBJ.Load("/tmp/TSQL-Checkers-master/checkers.mac","c")
+do $system.OBJ.LoadDir("/tmp/TSQL-Checkers-master/src/","ck",,1)
 do ^checkers
 
 ```
@@ -26,9 +25,8 @@ do ^checkers
 
 ```
 $ git clone https://github.com/antonum/TSQL-Checkers.git
-$ docker-compose build
 $ docker-compose up -d
-$ docker exec -it checkers_iris_1 iris session iris
+$ docker-copmose exec iris iris session iris
 USER>do ^checkers
 
 ```
@@ -36,3 +34,14 @@ USER>do ^checkers
 ## See also
 
 For more information on InterSystems IRIS support for Transact-SQL (TSQL), SQL Server and Sybase to IRIS Migration tools see [Transact-SQL (TSQL) Migration Guide](https://irisdocs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GTSQ)
+
+### Hints if the original docu is unavailable 
+
+- Rules are standard rules of Checker   
+- Moves are done by entering start and target coordinates e.g. **F2E1** or **f2e1** also **f2-e1**  
+- An invalid move results in **<METHOD DOES NOT EXIST>+11^checker**   
+- Don't worry enter **GOTO** or simply **G** to continue with a valid move.   
+- If your opponent reaches the bottom line and gets a *KING* it is totally paralized and can't move it anymore (Seems to be a bug)    
+- So it'S hard not to be a winner.
+#### Remember the focus is on TSQL support
+
