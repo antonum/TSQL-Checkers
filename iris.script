@@ -1,0 +1,10 @@
+zn "%SYS"
+Do ##class(Security.Users).UnExpireUserPasswords("*")
+do ##class(Security.Users).AddRoles("admin", "%ALL")
+do ##class(Security.System).Get(,.p)
+set p("AutheEnabled")=$zb(p("AutheEnabled"),16,7)
+do ##class(Security.System).Modify(,.p)
+
+zn "USER"
+do $system.OBJ.ImportDir("/opt/irisbuild/src/", "*","ck",,1)
+halt
