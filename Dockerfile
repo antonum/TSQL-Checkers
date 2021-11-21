@@ -1,5 +1,6 @@
 #FROM store/intersystems/iris:2019.1.0.511.0-community
 ARG IMAGE=intersystemsdc/iris-community:2020.4.0.547.0-zpm
+ARG IMAGE=intersystemsdc/iris-community:latest
 FROM $IMAGE
 LABEL maintainer="Anton Umnikov <anton@intersystems.com>"
 
