@@ -1,26 +1,18 @@
-FROM store/intersystems/iris:2019.1.0.511.0-community
+#FROM store/intersystems/iris:2019.1.0.511.0-community
+ARG IMAGE=intersystemsdc/iris-community:2020.4.0.547.0-zpm
+ARG IMAGE=intersystemsdc/iris-community:latest
+FROM $IMAGE
 LABEL maintainer="Anton Umnikov <anton@intersystems.com>"
 
-WORKDIR /opt
+USER root
+WORKDIR /opt/irisbuild
+RUN chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} /opt/irisbuild
 
-COPY User User
-COPY tsql tsql
-COPY checkers.mac .
+USER ${ISC_PACKAGE_MGRUSER}
 
-RUN TEMPID=$(echo "i"$RANDOM) \
- && iris start $ISC_PACKAGE_INSTANCENAME quietly EmergencyID=$TEMPID,$TEMPID \
- && /bin/echo -e "$TEMPID\n$TEMPID\n" \
-        'do ##class(Security.Users).UnExpireUserPasswords("*")\n' \
-        'do ##class(Security.Users).AddRoles("admin", "%ALL")\n' \
-        'do ##class(Security.System).Get(,.p)\n' \
-        'set p("AutheEnabled")=$zb(p("AutheEnabled"),16,7)\n' \
-        'do ##class(Security.System).Modify(,.p)\n' \
-        'zn "USER"\n' \
-        'do $system.OBJ.ImportDir("/opt/", "*.cls", "c", , 1)\n' \
-        'do $system.OBJ.Load("/opt/checkers.mac","c")\n' \
-        'halt\n' \
-  | iris session $ISC_PACKAGE_INSTANCENAME \
- && /bin/echo -e "$TEMPID\n$TEMPID\n" \
-  | iris stop $ISC_PACKAGE_INSTANCENAME quietly
-  
-CMD [ "-l", "/usr/irissys/mgr/messages.log" ]
+COPY src src
+COPY iris.script iris.script
+
+RUN iris start IRIS \
+	&& iris session IRIS < iris.script \
+    && iris stop IRIS quietly
